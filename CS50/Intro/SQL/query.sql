@@ -1,1 +1,1 @@
-SELECT * FROM shows;
+SELECT DISTINCT(title) FROM shows where id  IN (SELECT show_id FROM genres WHERE genre = "Comedy") ORDER BY title;
