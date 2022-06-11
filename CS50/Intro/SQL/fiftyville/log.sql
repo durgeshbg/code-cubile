@@ -9,3 +9,5 @@ SELECT * FROM courthouse_security_logs WHERE year = 2020 AND month = 7 AND day =
 SELECT * FROM atm_transactions WHERE year = 2020 AND day = 28 AND month = 7 AND atm_location = "Fifer Street" AND transaction_type = "withdraw";
 
 SELECT * FROM phone_calls WHERE year = 2020 AND day = 28 AND month = 7 AND duration <= 60;
+
+SELECT * FROM airports WHERE city="Fiftyville";
