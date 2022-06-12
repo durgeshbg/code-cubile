@@ -73,7 +73,7 @@ id IN (
 SELECT name FROM people WHERE 
 -- People who spoke recived phone on the day and time of the theft
 phone_number IN (
-    SELECT reciver FROM phone_calls WHERE year = 2020 AND day = 28 AND month = 7 AND duration <= 60
+    SELECT receiver FROM phone_calls WHERE year = 2020 AND day = 28 AND month = 7 AND duration <= 60
 ) AND
 -- People who traveled in the quickest flight on the next of the theft
 passport_number IN (
