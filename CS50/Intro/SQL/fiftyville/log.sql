@@ -79,4 +79,14 @@ SELECT name FROM people WHERE
 -- People who spoke recived phone on the day and time of the theft
 phone_number IN (
     SELECT reciver FROM phone_calls WHERE year = 2020 AND day = 28 AND month = 7 AND duration <= 60
+) AND
+
+-- People who traveled in the quickest flight on the next of the theft
+passport_number IN (
+    SELECT passport_number FROM passengers WHERE flight_id = (
+    SELECT id FROM flights WHERE year = 2020 AND day = 29 AND month = 7 AND origin_airport_id = (
+        SELECT id FROM airports WHERE city="Fiftyville"
+        ) 
+    ORDER BY hour LIMIT 1
+    )
 );
