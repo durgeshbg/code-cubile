@@ -24,6 +24,7 @@ SELECT * FROM flights WHERE year = 2020 AND day = 29 AND month = 7 AND origin_ai
     ) 
     ORDER BY hour LIMIT 1;
 
+-- Passengers that took the above flight
 SELECT * FROM passengers WHERE flight_id = (
     SELECT id FROM flights WHERE year = 2020 AND day = 29 AND month = 7 AND origin_airport_id = (
         SELECT id FROM airports WHERE city="Fiftyville"
