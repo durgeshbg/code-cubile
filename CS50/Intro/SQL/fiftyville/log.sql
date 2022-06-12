@@ -43,7 +43,7 @@ SELECT * FROM bank_accounts WHERE account_number IN (
 -- Name from the people who match the data below
 SELECT name FROM people WHERE 
 
--- People who spoke on the day and time of the theft
+-- People who spoke on phone on the day and time of the theft
 phone_number IN (
     SELECT caller FROM phone_calls WHERE year = 2020 AND day = 28 AND month = 7 AND duration <= 60
 ) AND
@@ -72,3 +72,11 @@ id IN (
         transaction_type = "withdraw"
     )
 );
+
+-- Name from the people who match the data below
+SELECT name FROM people WHERE 
+
+-- People who spoke recived phone on the day and time of the theft
+phone_number IN (
+    SELECT reciver FROM phone_calls WHERE year = 2020 AND day = 28 AND month = 7 AND duration <= 60
+)
