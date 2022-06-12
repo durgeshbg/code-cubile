@@ -24,3 +24,9 @@ SELECT * FROM passengers WHERE flight_id = (
     ORDER BY hour LIMIT 1
     );
 
+SELECT * FROM bank_accounts WHERE account_number IN (
+    SELECT account_number FROM atm_transactions WHERE year = 2020 AND 
+    day = 28 AND month = 7 AND 
+    atm_location = "Fifer Street" AND 
+    transaction_type = "withdraw"
+);
