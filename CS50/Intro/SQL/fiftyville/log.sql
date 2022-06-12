@@ -15,6 +15,7 @@ SELECT * FROM atm_transactions WHERE year = 2020 AND day = 28 AND month = 7 AND 
 -- Phone Calls
 SELECT * FROM phone_calls WHERE year = 2020 AND day = 28 AND month = 7 AND duration <= 60;
 
+-- Airports
 SELECT * FROM airports WHERE city="Fiftyville";
 
 SELECT * FROM flights WHERE year = 2020 AND day = 29 AND month = 7 AND origin_airport_id = (
