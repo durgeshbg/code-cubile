@@ -94,4 +94,14 @@ passport_number IN (
 -- License plate of the cars that left the court house after the ten minutes of the theft 
 license_plate IN (
     SELECT license_plate FROM courthouse_security_logs WHERE year = 2020 AND month = 7 AND day = 28 AND hour = 10 AND (minute >= 15 AND minute <= 25)
+) AND
+
+-- ID of the person who performed transactions on the day of the theft
+id IN (
+    SELECT person_id FROM bank_accounts WHERE account_number IN (
+        SELECT account_number FROM atm_transactions WHERE year = 2020 AND 
+        day = 28 AND month = 7 AND 
+        atm_location = "Fifer Street" AND 
+        transaction_type = "withdraw"
+    )
 );
