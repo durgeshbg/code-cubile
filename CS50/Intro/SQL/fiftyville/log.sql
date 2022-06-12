@@ -70,6 +70,15 @@ id IN (
     )
 );
 
+-------------------------------------------------------------------- Thief ESCAPED to --------------------------------------------------------------------- 
+-- Destination of the earliest flight which left the next day of the theft
+SELECT city FROM airports WHERE id = (
+    SELECT destination_airport_id FROM flights WHERE year = 2020 AND day = 29 AND month = 7 AND origin_airport_id = (
+        SELECT id FROM airports WHERE city="Fiftyville"
+        ) 
+        ORDER BY hour LIMIT 1
+);
+
 ------------------------------------------------------------------------ ACCOMPLICE ------------------------------------------------------------------------ 
 -- Name from the people who match the data below
 SELECT name FROM people WHERE 
