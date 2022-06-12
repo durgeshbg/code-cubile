@@ -32,6 +32,7 @@ SELECT * FROM passengers WHERE flight_id = (
     ORDER BY hour LIMIT 1
     );
 
+-- Details of bank accounts whose transactions took place on the day of theft
 SELECT * FROM bank_accounts WHERE account_number IN (
     SELECT account_number FROM atm_transactions WHERE year = 2020 AND 
     day = 28 AND month = 7 AND 
