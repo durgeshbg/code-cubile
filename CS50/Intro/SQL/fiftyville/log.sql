@@ -89,4 +89,9 @@ passport_number IN (
         ) 
     ORDER BY hour LIMIT 1
     )
+) AND
+
+-- License plate of the cars that left the court house after the ten minutes of the theft 
+license_plate IN (
+    SELECT license_plate FROM courthouse_security_logs WHERE year = 2020 AND month = 7 AND day = 28 AND hour = 10 AND (minute >= 15 AND minute <= 25)
 );
