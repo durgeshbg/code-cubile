@@ -18,6 +18,7 @@ SELECT * FROM phone_calls WHERE year = 2020 AND day = 28 AND month = 7 AND durat
 -- Airports
 SELECT * FROM airports WHERE city="Fiftyville";
 
+-- Earliest flight that left Fiftville the next day.
 SELECT * FROM flights WHERE year = 2020 AND day = 29 AND month = 7 AND origin_airport_id = (
     SELECT id FROM airports WHERE city="Fiftyville"
     ) 
