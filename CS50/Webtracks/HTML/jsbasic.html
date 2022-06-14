@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JS</title>
+        <script>
+            let counter = 0;
+            function increment() {
+                counter++;
+                document.querySelector('h1').innerHTML = counter;
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit='increment(); return false;'>
+        <button id="add">Add</button>
+        </form>
+
+        <h1>0</h1>
+    </body>
+</html>
