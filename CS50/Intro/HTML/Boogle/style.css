@@ -7,9 +7,20 @@ body {
     border-radius: 8px;
 }
 #logo {
-    font-size: 50px;
+    font-size: 100px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
-    padding: 30px;
+    padding: 10px;
 }
-b
+.g,.B {
+    color: #4885ed;
+}
+.o,.e {
+    color: #db3236;
+}
+.oo {
+    color: #f4c20d;
+}
+.l {
+    color: #3cba54;
+}
