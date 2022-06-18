@@ -5,6 +5,8 @@ body {
 .submit {
     background-color: rgb(242, 65, 65);
     border-radius: 8px;
+    width: 10%;
+    height: 25px;
 }
 
 .text {
