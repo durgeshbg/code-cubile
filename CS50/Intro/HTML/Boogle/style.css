@@ -6,6 +6,13 @@ body {
     background-color: rgb(242, 65, 65);
     border-radius: 8px;
 }
+
+.text {
+    border-radius: 8px;
+    width: 50%;
+    height: 25px;
+}
+
 #logo {
     font-size: 100px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
