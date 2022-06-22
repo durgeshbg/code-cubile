@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Size</title>
-    </head>
-    <body>
-        <p>Thie the sample text.</p>
-        <select>
-            <option value="large">Large</option>
-            <option value="medium" selected>Medium</option>
-            <option value="small">Small</option>
-        </select>
-        <script>
-            document.querySelector('select').onchange = function() {
-                document.querySelector('p').style.fontSize = this.value;
-            }
-        </script>
-    </body>
+	<head>
+		<title>Size</title>
+	</head>
+	<body>
+		<p>Thie the sample text.</p>
+		<select>
+			<option value="large">Large</option>
+			<option value="medium" selected>Medium</option>
+			<option value="small">Small</option>
+		</select>
+		<script>
+			document.querySelector('select').onchange = function () {
+				document.querySelector('p').style.fontSize = this.value;
+			};
+		</script>
+	</body>
 </html>

@@ -1,36 +1,38 @@
 body {
-    background-color: #000;
-    text-align: center;
-    padding-top: 30%;
+	background-color: #000;
+	text-align: center;
+	padding-top: 30%;
 }
 .submit {
-    background-color: rgb(242, 65, 65);
-    border-radius: 8px;
-    width: 10%;
-    height: 25px;
+	background-color: rgb(242, 65, 65);
+	border-radius: 8px;
+	width: 10%;
+	height: 25px;
 }
 
 .text {
-    border-radius: 8px;
-    width: 50%;
-    height: 25px;
+	border-radius: 8px;
+	width: 50%;
+	height: 25px;
 }
 
 #logo {
-    font-size: 100px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    padding: 10px;
+	font-size: 100px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-weight: bold;
+	padding: 10px;
 }
-.g,.B {
-    color: #4885ed;
+.g,
+.B {
+	color: #4885ed;
 }
-.o,.e {
-    color: #db3236;
+.o,
+.e {
+	color: #db3236;
 }
 .oo {
-    color: #f4c20d;
+	color: #f4c20d;
 }
 .l {
-    color: #3cba54;
+	color: #3cba54;
 }
