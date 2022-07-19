@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-cd ..
-
-git add .
+git add -A
 
 echo 'Enter the commit message:'
 read commitmessage
