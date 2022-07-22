@@ -5,14 +5,22 @@ def main():
     else:
         print('Invalid')
 
-
-
+def num_check(s):
+    digits = ''
+    for c in s:
+        if c.isdigit():
+            digits += c
+            if digits[0] == '0':
+                return False
+        else:
+            if not digits == '':
+                return False
+    return True
 
 def is_valid(s):
-    if s[0:2].isalpha() and len(s) <= 6 and len(s) >= 2:
-        if num_check(s[2:]):
-            if not (s.punctuation):
-                return True
+    if len(s) <= 6 and len(s) >= 2 and s[0].isalpha() and s[1].isalpha() and s.isalnum():
+        if num_check(s):
+            return True
     return False
 main()
 
