@@ -18,3 +18,7 @@ except requests.HTTPError:
     sys.exit('HTTP Error')
 except requests.RequestException:
     sys.exit('Ambiguous Error')
+
+response = res.json()
+price = response['bpi']['USD']['rate_float'] * n
+print(f'${price:,.4f}')
