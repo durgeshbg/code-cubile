@@ -8,3 +8,13 @@ try:
     n = int(sys.argv[1])
 except ValueError:
     sys.exit('Command-line argument is not a number')
+try:
+    res = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+except requests.ConnectionError:
+    sys.exit('Connection Error')
+except requests.Timeout:
+    sys.exit('Request Timed Out')
+except requests.HTTPError:
+    sys.exit('HTTP Error')
+except requests.RequestException:
+    sys.exit('Ambiguous Error')
