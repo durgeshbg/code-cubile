@@ -22,5 +22,7 @@ def is_valid(s):
         if num_check(s):
             return True
     return False
-main()
+
+if __name__ == '__main__':
+    main()
 
