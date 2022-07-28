@@ -1,10 +1,11 @@
 def main():
-    greet = input("Greeting: ").strip().lower().split(" ")
+    greet = input("Greeting: ")
     money = value(greet)
     print(f'${money}')
 
 
-def value(greeting):
+def value(greet):
+    greeting = greet.strip().lower().split(" ")
     first_word = greeting[0]
     if first_word == 'hello' or first_word == 'hello,':
         return 0
