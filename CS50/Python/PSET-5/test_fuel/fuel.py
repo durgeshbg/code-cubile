@@ -1,23 +1,23 @@
 def main():
-    fraction = input('Fraction: ').split('/')
+    fraction = input('Fraction: ')
     p = convert(fraction)
-    if p:
-        percentage = gauge(p)
-        print(percentage)
+    percentage = gauge(p)
+    print(percentage)
 
-def convert(fraction):
-    try:
-        numerator = int(fraction[0])
-        denominator = int(fraction[1])
-        
-        if numerator > denominator:
-            raise ValueError
-        else:
-            p = round((numerator/denominator) * 100)
-            return p
+def convert(f):
+    fraction = f.split('/')
+    numerator = int(fraction[0])
+    denominator = int(fraction[1])
+    
+    if denominator == 0:
+        raise ZeroDivisionError
 
-    except (ValueError,ZeroDivisionError):
-        pass
+    if numerator > denominator:
+        raise ValueError
+
+    else:
+        p = round((numerator/denominator) * 100)
+        return p
 
 def gauge(percentage):
     if percentage <= 1:
