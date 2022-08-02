@@ -1,6 +1,7 @@
 # Code Cubile
 
-This is project Code Cubile.  
+This is project Code Cubile.
+I use this repo to keep track of what I learn every day.
 I code everyday and automate the basic git workflow using shell script to push my work.
 
 ---
