@@ -1,14 +1,15 @@
 def main():
-    fraction = input('Fraction: ')
+    fraction = input("Fraction: ")
     p = convert(fraction)
     percentage = gauge(p)
     print(percentage)
 
+
 def convert(f):
-    fraction = f.split('/')
+    fraction = f.split("/")
     numerator = int(fraction[0])
     denominator = int(fraction[1])
-    
+
     if denominator == 0:
         raise ZeroDivisionError
 
@@ -16,16 +17,17 @@ def convert(f):
         raise ValueError
 
     else:
-        p = round((numerator/denominator) * 100)
+        p = round((numerator / denominator) * 100)
         return p
+
 
 def gauge(percentage):
     if percentage <= 1:
-        return 'E'
+        return "E"
     elif percentage >= 99:
-        return 'F'
+        return "F"
     else:
-        return f'{percentage}%'
+        return f"{percentage}%"
 
 
 if __name__ == "__main__":
