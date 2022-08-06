@@ -10,4 +10,4 @@ while True:
     except EOFError:
         break
 for i in grocery:
-    print(f'{grocery[i]} {i}')
+    print(f"{grocery[i]} {i}")
