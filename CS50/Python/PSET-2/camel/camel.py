@@ -1,5 +1,5 @@
 camelCase = input("camelCase: ")
-snake_case = ''
+snake_case = ""
 
 for i in camelCase:
     if i.isupper():
