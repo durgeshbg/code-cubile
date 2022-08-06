@@ -1,7 +1,8 @@
 import random
 
+
 def main():
-    level = get_level('Level: ')
+    level = get_level("Level: ")
     score = 0
     for i in range(10):
         trail = 0
@@ -9,26 +10,27 @@ def main():
 
         while True:
             try:
-                print(f'{x} + {y} = ',end='')
+                print(f"{x} + {y} = ", end="")
                 res = int(input())
             except ValueError:
-                print('EEE')
+                print("EEE")
                 trail += 1
                 if trail == 3:
-                    print(f'{x} + {y} = {result}')
+                    print(f"{x} + {y} = {result}")
                     break
                 continue
             if result == res:
-                score +=1
+                score += 1
                 break
             else:
-                print('EEE')
+                print("EEE")
                 trail += 1
                 if trail == 3:
-                    print(f'{x} + {y} = {result}')
+                    print(f"{x} + {y} = {result}")
                     break
 
-    print(f'Score: {score}')
+    print(f"Score: {score}")
+
 
 def get_level(s):
     while True:
@@ -36,7 +38,7 @@ def get_level(s):
             level = int(input(s))
         except ValueError:
             continue
-        if level in [1,2,3]:
+        if level in [1, 2, 3]:
             return level
 
 

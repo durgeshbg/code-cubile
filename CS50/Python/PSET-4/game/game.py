@@ -1,5 +1,6 @@
 import random
 
+
 def get_valid_int(s):
     while True:
         try:
@@ -10,18 +11,20 @@ def get_valid_int(s):
         except ValueError:
             continue
 
+
 def main():
-    level = get_valid_int('Level: ')
+    level = get_valid_int("Level: ")
     number = random.randint(1, level)
     while True:
-        guess = get_valid_int('Guess: ')
+        guess = get_valid_int("Guess: ")
         if guess > number:
-            print('Too large!')
+            print("Too large!")
         elif guess < number:
-            print('Too small!')
+            print("Too small!")
         else:
-            print('Just Right!')
+            print("Just Right!")
             break
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
