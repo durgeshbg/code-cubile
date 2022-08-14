@@ -4,12 +4,12 @@
         <title>DOM2</title>
     </head>
     <body>
-        <button id="create">Create</button>
+        <button id="remove">Remove</button>
         <p>Hello World</p>
         <p>Hello World</p>
         <p>Hello World</p>
         <script>
-            document.querySelector('#create').onclick = function () {
+            document.querySelector('#remove').onclick = function () {
                 let p = document.querySelector('p')
                 document.querySelector('body').removeChild(p)
             }

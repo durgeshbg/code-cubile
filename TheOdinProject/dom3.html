@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DOM3</title>
+    </head>
+    <body>
+        <button id="create">Create</button>
+        <script>
+            document.querySelector('#create').onclick = function () {
+                let p = document.createElement('p');
+                document.querySelector('body').appendChild(p);
+                p.setAttribute('id','p1');
+                let p1 = document.querySelector('#p1');
+                p1.innerHTML = 'Hello World';
+            }
+        </script>
+    </body>
+</html>
