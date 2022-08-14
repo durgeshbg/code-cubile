@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <button id="create">Create</button>
+        <script>
+            document.querySelector('#create').onclick = function () {
+                let text = document.createElement('p')
+                text.innerHTML = 'Hello World'
+                document.querySelector('body').append(text)
+            }
+        </script>
+    </body>
+</html>
