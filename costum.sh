@@ -1,1 +1,0 @@
-/Users/durgesh/VCS/code-cubile/git-automation-scripts/costum.sh
