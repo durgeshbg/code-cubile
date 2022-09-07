@@ -8,10 +8,9 @@ def main():
 
 def validate(ip):
     if matches := re.search(r"(\d+)\.(\d+)\.(\d+)\.(\d+)", ip):
-        for i in range(4):
-            if int(matches.group(i+1)) > 255:
-                return False
-        return True
+        if byte1(matches.group(1)) and byte2(matches.group(2)) and byte3(matches.group(3)) and byte4(matches.group(4)):
+            return True
+        return False
     else:
         return False
 
