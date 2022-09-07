@@ -14,5 +14,25 @@ def validate(ip):
     else:
         return False
 
+def byte1(b1):
+    if int(b1) > 255:
+        return False
+    return True
+
+def byte2(b2):
+    if int(b2) > 255:
+        return False
+    return True
+
+def byte3(b3):
+    if int(b3) > 255:
+        return False
+    return True
+
+def byte4(b4):
+    if int(b4) > 255:
+        return False
+    return True
+
 if __name__ == "__main__":
     main()
