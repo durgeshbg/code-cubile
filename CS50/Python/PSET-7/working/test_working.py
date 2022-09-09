@@ -12,4 +12,6 @@ def test_convert_nightshift():
 def test_ValueError():
     with pytest.raises(ValueError):
         convert('09:00 AM - 17:00 PM')
-
+    with pytest.raises(ValueError):
+        convert('9 AM - 5 PM')
+    
