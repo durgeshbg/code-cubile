@@ -8,4 +8,8 @@ def test_convert_dayshift():
 def test_convert_nightshift():
     assert convert("11 PM to 7 AM") == "23:00 to 07:00"
     assert convert("10:30 PM to 5:47 AM") == "22:30 to 05:47"
- 
+
+def test_ValueError():
+    with pytest.raises(ValueError):
+        convert('09:00 AM - 17:00 PM')
+
