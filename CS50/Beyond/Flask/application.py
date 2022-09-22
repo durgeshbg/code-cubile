@@ -17,3 +17,7 @@ def index():
                             [None, None, None]]
         session["turn"] = "X"
     return render_template("game.html", board=session["board"], turn=session["turn"])
+
+@app.route("/play/<int:row>/<int:col>")
+def play(row, col):
+    return redirect(url_for("index"))
