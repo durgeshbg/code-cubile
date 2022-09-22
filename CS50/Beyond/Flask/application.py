@@ -7,6 +7,7 @@ app = Flask(__name__)
 app.config["SESSION_FILE_DIR"] = mkdtemp()
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 
 @app.route("/")
 def index():
@@ -15,4 +16,4 @@ def index():
                             [None, None, None],
                             [None, None, None]]
         session["turn"] = "X"
-    render_template('game.html', board=session[board], turn=session["turn"])
+    return render_template("game.html", board=session["board"], turn=session["turn"])
