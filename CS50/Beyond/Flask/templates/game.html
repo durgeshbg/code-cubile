@@ -19,7 +19,13 @@
             {% for i in range(3) %}
             <tr>
                 {% for j in range(3) %}
-                <td>This is a cell</td>
+                <td>
+                    {% if board[i][j] %}
+                        {{ board[i][j] }}
+                    {% else %}
+                        <a href="{{ url_for("play",row=i,col=j) }}">Type here.</a>
+                    {% endif %}
+                </td>
                 {% endfor %}
             </tr>
             {% endfor %}
