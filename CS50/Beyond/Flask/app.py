@@ -20,4 +20,4 @@ def index():
 
 @app.route("/play/<int:row>/<int:col>")
 def play(row, col):
-    return redirect(url_for("index"))
+    return redirect("/")
