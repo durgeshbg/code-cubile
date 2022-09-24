@@ -26,3 +26,13 @@ def play(row, col):
     else:
         session["turn"] = "X"
     return redirect("/")
+
+def game():
+    board = session["board"]
+    turn = session["turn"]
+    for i in range(3):
+        for i in range(3):
+            if board[i][0] == board[i][1] and board[i][1] == board[i][2]:
+                ...
+            if board[0][j] == board[1][j] and board[1][j] == board[2][j]:
+                ...
