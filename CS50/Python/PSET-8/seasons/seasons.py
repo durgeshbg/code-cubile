@@ -4,14 +4,18 @@ import inflect
 p = inflect.engine()
 
 def main():
-    try:
-        y,m,d = map(int, input("Date of Birth: ").split("-"))
-    except:
-        exit("Invalid date")
+    s = input("Date of Birth: ")
+    y,m,d = inputdate(s)
     minutes = convert(y, m, d)
     words = p.number_to_words(minutes,andword='')
     print(words.capitalize()+" minutes.")
 
+def inputdate(s):
+    try:
+        y,m,d = map(int, s.split("-"))
+        return y,m,d
+    except:
+        exit("Invalid date")
 
 def convert(y, m, d):
     dob = date(y,m,d)
