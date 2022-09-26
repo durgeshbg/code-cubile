@@ -1,4 +1,4 @@
-from seasons import convert
+from seasons import convert, inputdate
 
 def test_convert():
     assert convert(2020, 9, 23) == 1055520
