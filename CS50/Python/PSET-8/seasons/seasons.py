@@ -9,10 +9,16 @@ def main():
     except:
         exit("Invalid date")
     dob = date(y,m,d)
-    d = date.today() - dob
-    minutes = d.days * 24 * 60
+    minutes = convert(dob)
     words = p.number_to_words(minutes,andword='')
     print(words.capitalize()+" minutes.")
+
+
+def convert(dob):
+    d = date.today() - dob
+    return (d.days * 24 * 60)
+
+
 if __name__ == "__main__":
     main()
 
