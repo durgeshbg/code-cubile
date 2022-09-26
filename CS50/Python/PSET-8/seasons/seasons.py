@@ -1,5 +1,7 @@
 from datetime import date
 from sys import exit
+import inflect
+p = inflect.engine()
 
 def main():
     try:
@@ -9,7 +11,8 @@ def main():
     dob = date(y,m,d)
     d = date.today() - dob
     minutes = d.days * 24 * 60
-    print(minutes)
+    words = p.number_to_words(minutes,andword='')
+    print(words.capitalize()+" minutes.")
 if __name__ == "__main__":
     main()
 
