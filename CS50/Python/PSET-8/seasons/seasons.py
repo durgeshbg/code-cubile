@@ -16,7 +16,6 @@ def main():
 def convert(y, m, d):
     dob = date(y,m,d)
     d = date.today() - dob
-    print(d.days * 24 * 60)
     return (d.days * 24 * 60)
 
 
