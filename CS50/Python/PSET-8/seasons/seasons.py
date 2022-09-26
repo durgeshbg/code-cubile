@@ -8,13 +8,13 @@ def main():
         y,m,d = map(int, input("Date of Birth: ").split("-"))
     except:
         exit("Invalid date")
-    dob = date(y,m,d)
-    minutes = convert(dob)
+    minutes = convert(y, m, d)
     words = p.number_to_words(minutes,andword='')
     print(words.capitalize()+" minutes.")
 
 
-def convert(dob):
+def convert(y, m, d):
+    dob = date(y,m,d)
     d = date.today() - dob
     return (d.days * 24 * 60)
 
