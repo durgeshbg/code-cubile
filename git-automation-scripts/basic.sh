@@ -2,8 +2,6 @@
 
 git add -A
 
-DATE=$(date)
-
-git commit -m "$DATE"
+git commit -m "$(date)"
 
 git push origin main
