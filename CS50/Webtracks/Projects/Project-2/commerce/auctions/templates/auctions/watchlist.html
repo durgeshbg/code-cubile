@@ -1,0 +1,18 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+    <h2>Watchlist</h2>
+    <ul class="list-group" >
+        {% for listing in watchlist %}
+            <li class="list-group-item">
+                <h4><a href="{% url 'listings' listing.id %}">{{ listing.title }}</a></h4>
+                {% if listing.img_url %}
+                <img src="{{ listing.img_url }}" class="img-thumbnail m-3" width="100px" alt="listing-image">
+                {% endif %}
+                Price: ${{ listing.bid }}
+                <br>
+                <a class="btn btn-dark m-3" href="{% url 'remove_watchlist' listing.id %}">Remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
