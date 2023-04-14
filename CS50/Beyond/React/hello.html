@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script
-            crossorigin
-            src="https://unpkg.com/react@18/umd/react.development.js"
-        ></script>
-        <script
-            crossorigin
-            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-        ></script>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-        <title>Document</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+        <title>React</title>
+
+        <style>
+            * {
+                font-family: 'Roboto Condensed', sans-serif;
+            }
+        </style>
     </head>
     <body>
         <div id="app"></div>
@@ -18,7 +23,15 @@
         <script type="text/babel">
             class Hello extends React.Component {
                 render() {
-                    return <h1>Hello {this.props.name || "Marc"}!</h1>;
+                    return (
+                        <div>
+                        <h1>Hello</h1>
+                        <button onClick={this.handleCLick}>Click me!</button>
+                        </div>
+                    );
+                }
+                handleCLick = () => {
+                    alert("Hi!");
                 }
             }
 
@@ -26,7 +39,6 @@
                 render() {
                     return (
                         <div>
-                            <Hello name="Andrew" />
                             <Hello />
                         </div>
                     );
