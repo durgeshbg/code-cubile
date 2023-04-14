@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script
+            crossorigin
+            src="https://unpkg.com/react@18/umd/react.development.js"
+        ></script>
+        <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        ></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Counter</title>
+
+        <style>
+            * {
+                font-family: "Roboto Condensed", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script type="text/babel">
+            class Counter extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {
+                        count: 0,
+                    };
+                }
+
+                render() {
+                    return (
+                        <div>
+                            <h1>{this.state.count}</h1>
+                            <button onClick={this.increment}>Inc</button>
+                            <button onClick={this.decrement}>Dec</button>
+                        </div>
+                    );
+                }
+
+                increment = () => {
+                    this.setState((state) => ({
+                        count: state.count + 1,
+                    }));
+                };
+
+                decrement = () => {
+                    this.setState((oldState) => ({
+                        count: oldState.count - 1,
+                    }));
+                };
+            }
+
+            class App extends React.Component {
+                render() {
+                    return (
+                        <div>
+                            <Counter />
+                        </div>
+                    );
+                }
+            }
+            ReactDOM.render(<App />, document.querySelector("#app"));
+        </script>
+    </body>
+</html>
