@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script
+            crossorigin
+            src="https://unpkg.com/react@18/umd/react.development.js"
+        ></script>
+        <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        ></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Todo</title>
+
+        <style>
+            * {
+                font-family: "Roboto Condensed", sans-serif;
+            }
+            li {
+                list-style-type: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script type="text/babel">
+            
+            class App extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {
+                        tasks: [],
+                        input: ""
+                    }
+                }
+                render() {
+                    return (
+                        <div>
+                            <h1>Tasks</h1>
+                            <ul>
+                                {this.state.tasks.map((task, i) =>
+                                        <li key={i}>
+                                            <button onClick={this.handleCheck} value={i}>[&#x2713;]</button>{task}
+                                        </li>
+                                )}
+                            </ul>
+                            <input onChange={this.handleChange} value={this.state.input} />
+                            <button onClick={this.addTask}>Add task</button>
+                        </div>
+                    );
+                }
+
+                handleChange = (event) => {
+                    this.setState({
+                        input: event.target.value
+                    });
+                }
+
+                handleCheck = (event) => {
+                    this.setState(state => ({
+                        i: state.tasks.splice(event.target.value,1),
+                        i: ""
+                    }));
+                }
+
+                addTask = () => {
+                    this.setState(state => ({
+                        tasks: [...state.tasks, state.input],
+                        input: ""
+                    }));
+                }
+            }
+            ReactDOM.render(<App />, document.querySelector("#app"));
+        </script>
+    </body>
+</html>
