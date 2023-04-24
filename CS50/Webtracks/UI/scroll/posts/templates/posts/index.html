@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .post {
+            background-color: green;
+            margin: 30px;
+            padding: 50px;
+        }
+    </style>
+    <title>POSTS</title>
+</head>
+<body>
+    <div id="posts"></div>
+
+    <script>
+        let counter = 1;
+        let quantity = 10;
+
+        document.addEventListener("DOMContentLoaded", load);
+
+        window.onscroll = () => {
+            if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+                load();
+            }
+        }
+
+        function load() {
+            const start = counter;
+            const end = counter + quantity - 1;
+            counter = end + 1;
+
+            fetch(`/posts/start=${start}&end=${end}`)
+            .then(respose => respose.json())
+            .then(data => {
+                data["posts"].forEach(post => add_post(post));
+            })
+
+        }
+
+        function add_post(contents) {
+            const post = document.createElement("div");
+            post.className = "post"
+            post.innerHTML = contents;
+            document.querySelector("#posts").append(post);
+        }
+    </script>
+</body>
+</html>
