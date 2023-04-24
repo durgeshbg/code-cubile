@@ -5,10 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @keyframes hide {
+            0% {
+                opacity: 1;
+                padding: 30px;
+                height: 100%;
+                line-height: 100%;
+                margin: 30px;
+            }
+            75% {
+                opacity: 0;
+                padding: 30px;
+                line-height: 100%;
+                height: 100%;
+                margin: 30px;
+            }
+            100% {
+                opacity: 0;
+                height: 0px;
+                line-height: 0%;
+                padding: 0px;
+                margin: 0px;
+            }
+        }
         .post {
             background-color: green;
             margin: 30px;
-            padding: 50px;
+            padding: 30px;
+            animation: hide 2s forwards paused;
+        }
+        button {
+            margin-left: 95%;
         }
     </style>
     <title>POSTS</title>
@@ -21,6 +48,16 @@
         let quantity = 10;
 
         document.addEventListener("DOMContentLoaded", load);
+
+        document.addEventListener("click", event => {
+            const element = event.target;
+            if (element.className === "hide") {
+                element.parentElement.style.animationPlayState = "running";
+                element.parentElement.addEventListener("animationend", () => {
+                    element.parentElement.remove();
+                });
+            }
+        })
 
         window.onscroll = () => {
             if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
@@ -44,7 +81,7 @@
         function add_post(contents) {
             const post = document.createElement("div");
             post.className = "post"
-            post.innerHTML = contents;
+            post.innerHTML = `${contents} <button class="hide" >Hide</button>`;
             document.querySelector("#posts").append(post);
         }
     </script>
