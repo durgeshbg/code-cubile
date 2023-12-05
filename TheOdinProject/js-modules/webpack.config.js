@@ -1,5 +1,5 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -10,6 +10,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
     module: {
         rules: [
@@ -31,10 +32,9 @@ module.exports = {
             },
         ],
     },
-    // plugins: [
-    //     new HtmlWebpackPlugin({
-    //         template: './src/index.html',
-    //         inject: 'body',
-    //     }),
-    // ],
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Output Management',
+        }),
+    ],
 };
