@@ -2,6 +2,7 @@ const path = require('path');
 const yaml = require('yamljs');
 const json5 = require('json5');
 const toml = require('toml');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
