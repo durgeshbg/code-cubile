@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto-Regular.woff2') format('woff2'),
+        url('./Roboto-Regular.woff') format('woff');
+    font-style: normal;
+}
 .hello {
     color: red;
+    font-family: Roboto;
 }
